@@ -1,0 +1,106 @@
+export interface GenderTraits {
+  m: number; // Masculinity
+  f: number; // Femininity
+  n: number; // Neutrality
+  flu: number; // Fluidity
+  c: number; // Complexity
+  i: number; // Intensity (How strong the gender feel is)
+  x: number; // Xeno/Otherworldly/Non-standard
+}
+
+export interface Gender {
+  id: string;
+  name: string;
+  description: string;
+  traits: GenderTraits;
+}
+
+export const GENDERS: Gender[] = [
+  { id: "agender", name: "Agender", description: "Person who does not identify with any gender.", traits: { m: 0, f: 0, n: 10, flu: 0, c: 2, i: 0, x: 0 } },
+  { id: "androgynous", name: "Androgynous", description: "Person who identifies as a mix of both male and female, or neither.", traits: { m: 5, f: 5, n: 5, flu: 0, c: 4, i: 6, x: 0 } },
+  { id: "bigender", name: "Bigender", description: "Person who identifies as two genders.", traits: { m: 6, f: 6, n: 2, flu: 4, c: 6, i: 8, x: 0 } },
+  { id: "cis-female", name: "Cis Female", description: "Person assigned female at birth who identifies as female.", traits: { m: 0, f: 10, n: 0, flu: 0, c: 1, i: 9, x: 0 } },
+  { id: "cis-male", name: "Cis Male", description: "Person assigned male at birth who identifies as male.", traits: { m: 10, f: 0, n: 0, flu: 0, c: 1, i: 9, x: 0 } },
+  { id: "demigender", name: "Demigender", description: "Person who feels partially identified with a gender.", traits: { m: 3, f: 3, n: 5, flu: 0, c: 5, i: 4, x: 0 } },
+  { id: "demiboy", name: "Demiboy", description: "Person who feels partially identified as a boy/man.", traits: { m: 6, f: 0, n: 5, flu: 0, c: 3, i: 5, x: 0 } },
+  { id: "demigirl", name: "Demigirl", description: "Person who feels partially identified as a girl/woman.", traits: { m: 0, f: 6, n: 5, flu: 0, c: 3, i: 5, x: 0 } },
+  { id: "genderfluid", name: "Genderfluid", description: "Person whose gender identity changes over time.", traits: { m: 5, f: 5, n: 5, flu: 10, c: 7, i: 7, x: 2 } },
+  { id: "genderqueer", name: "Genderqueer", description: "Person whose gender identity is outside the binary.", traits: { m: 4, f: 4, n: 4, flu: 5, c: 8, i: 7, x: 5 } },
+  { id: "intergender", name: "Intergender", description: "Person whose gender is between or a combination of genders.", traits: { m: 4, f: 4, n: 7, flu: 2, c: 6, i: 6, x: 1 } },
+  { id: "non-binary", name: "Non-binary", description: "Person whose gender identity is not exclusively male or female.", traits: { m: 2, f: 2, n: 8, flu: 3, c: 5, i: 6, x: 3 } },
+  { id: "omnigender", name: "Omnigender", description: "Person who identifies with many or all genders.", traits: { m: 8, f: 8, n: 8, flu: 6, c: 9, i: 9, x: 4 } },
+  { id: "pangender", name: "Pangender", description: "Person whose gender identity encompasses all genders.", traits: { m: 9, f: 9, n: 9, flu: 5, c: 10, i: 10, x: 5 } },
+  { id: "polygender", name: "Polygender", description: "Person who identifies with multiple genders.", traits: { m: 7, f: 7, n: 5, flu: 4, c: 8, i: 8, x: 3 } },
+  { id: "trans-female", name: "Trans Female", description: "Person assigned male at birth who identifies as female.", traits: { m: 0, f: 10, n: 0, flu: 0, c: 4, i: 9, x: 0 } },
+  { id: "trans-male", name: "Trans Male", description: "Person assigned female at birth who identifies as male.", traits: { m: 10, f: 0, n: 0, flu: 0, c: 4, i: 9, x: 0 } },
+  { id: "trigender", name: "Trigender", description: "Person who identifies with three genders.", traits: { m: 7, f: 7, n: 7, flu: 3, c: 8, i: 8, x: 2 } },
+  { id: "two-spirit", name: "Two-Spirit", description: "A term used by some Indigenous North Americans to describe their gender identity.", traits: { m: 6, f: 6, n: 4, flu: 5, c: 7, i: 8, x: 10 } },
+  { id: "neutrois", name: "Neutrois", description: "Person who identifies as having a neutral gender.", traits: { m: 0, f: 0, n: 10, flu: 0, c: 5, i: 6, x: 0 } },
+  { id: "gender-non-conforming", name: "Gender Non-Conforming", description: "Person who does not follow conventional gender expectations.", traits: { m: 5, f: 5, n: 7, flu: 4, c: 6, i: 6, x: 3 } },
+  { id: "gender-questioning", name: "Gender Questioning", description: "Person who is currently exploring their gender identity.", traits: { m: 3, f: 3, n: 3, flu: 7, c: 9, i: 4, x: 4 } },
+  { id: "aliagender", name: "Aliagender", description: "A gender identity that is separate from existing gender categories.", traits: { m: 0, f: 0, n: 0, flu: 0, c: 7, i: 7, x: 10 } },
+  { id: "aporagender", name: "Aporagender", description: "A gender that is separate from man, woman, and anything in between, but still has a specific feeling.", traits: { m: 0, f: 0, n: 8, flu: 0, c: 8, i: 8, x: 9 } },
+  { id: "astralgender", name: "Astralgender", description: "A gender that feels connected to space or the stars.", traits: { m: 0, f: 0, n: 5, flu: 2, c: 9, i: 7, x: 10 } },
+  { id: "autigender", name: "Autigender", description: "A gender identity that is deeply influenced by being autistic.", traits: { m: 2, f: 2, n: 5, flu: 3, c: 10, i: 8, x: 8 } },
+  { id: "maverique", name: "Maverique", description: "A gender identity that is defined by autonomy and inner conviction, independent of the binary.", traits: { m: 0, f: 0, n: 0, flu: 0, c: 8, i: 10, x: 10 } },
+  { id: "novigender", name: "Novigender", description: "A gender that is too complex to be described in established terms.", traits: { m: 2, f: 2, n: 2, flu: 8, c: 10, i: 7, x: 9 } },
+  { id: "vailgender", name: "Vailgender", description: "A gender that feels like it's covered by a veil.", traits: { m: 1, f: 1, n: 5, flu: 3, c: 9, i: 5, x: 9 } },
+  { id: "xenogender", name: "Xenogender", description: "A gender that cannot be described using human concepts of gender.", traits: { m: 0, f: 0, n: 0, flu: 5, c: 10, i: 8, x: 10 } },
+  { id: "affectugender", name: "Affectugender", description: "A gender that changes based on one's mood or emotional state.", traits: { m: 4, f: 4, n: 4, flu: 10, c: 9, i: 6, x: 3 } },
+  { id: "ambigender", name: "Ambigender", description: "Experiencing two genders simultaneously without fluidity.", traits: { m: 6, f: 6, n: 2, flu: 0, c: 7, i: 9, x: 1 } },
+  { id: "anongender", name: "Anongender", description: "A gender that is unknown or cannot be named.", traits: { m: 0, f: 0, n: 5, flu: 4, c: 10, i: 4, x: 9 } },
+  { id: "anteigender", name: "Anteigender", description: "A fluid gender that can be anything but has a 'base' state.", traits: { m: 5, f: 5, n: 5, flu: 9, c: 8, i: 7, x: 4 } },
+  { id: "anxiegender", name: "Anxiegender", description: "A gender identity affected by anxiety.", traits: { m: 2, f: 2, n: 5, flu: 8, c: 9, i: 4, x: 6 } },
+  { id: "aprogender", name: "Aprogender", description: "A gender that feels like it's being 'processed'.", traits: { m: 2, f: 2, n: 5, flu: 6, c: 10, i: 5, x: 8 } },
+  { id: "aristogender", name: "Aristogender", description: "A gender linked to nobility or high status.", traits: { m: 5, f: 5, n: 3, flu: 0, c: 8, i: 10, x: 7 } },
+  { id: "bluegender", name: "Bluegender", description: "A gender that feels blue or cool.", traits: { m: 0, f: 0, n: 7, flu: 2, c: 9, i: 6, x: 10 } },
+  { id: "bordergender", name: "Bordergender", description: "A gender identity influenced by borderline personality disorder.", traits: { m: 3, f: 3, n: 3, flu: 10, c: 10, i: 8, x: 4 } },
+  { id: "caelgender", name: "Caelgender", description: "A gender connected to the sky or heavens.", traits: { m: 0, f: 0, n: 4, flu: 3, c: 9, i: 7, x: 10 } },
+  { id: "cassgender", name: "Cassgender", description: "Feeling that gender is unimportant or doesn't matter.", traits: { m: 1, f: 1, n: 9, flu: 0, c: 3, i: 1, x: 0 } },
+  { id: "cavusgender", name: "Cavusgender", description: "A gender that feels like a hollow or empty space.", traits: { m: 0, f: 0, n: 10, flu: 0, c: 8, i: 2, x: 8 } },
+  { id: "cestgender", name: "Cestgender", description: "A gender that feels like it's in a box or chest.", traits: { m: 0, f: 0, n: 5, flu: 0, c: 9, i: 5, x: 8 } },
+  { id: "cloudgender", name: "Cloudgender", description: "A gender that feels soft, fluffy, or hazy like a cloud.", traits: { m: 0, f: 0, n: 8, flu: 4, c: 9, i: 4, x: 10 } },
+  { id: "cogitogender", name: "Cogitogender", description: "A gender that only exists because one thinks about it.", traits: { m: 2, f: 2, n: 7, flu: 5, c: 10, i: 4, x: 5 } },
+  { id: "collgender", name: "Collgender", description: "A gender that is a collection of many identities.", traits: { m: 8, f: 8, n: 8, flu: 4, c: 10, i: 9, x: 6 } },
+  { id: "colorblindgender", name: "Colorblindgender", description: "A gender that is independent of color-coded social norms.", traits: { m: 3, f: 3, n: 9, flu: 2, c: 7, i: 5, x: 4 } },
+  { id: "comgender", name: "Comgender", description: "A gender that is full or complete.", traits: { m: 5, f: 5, n: 5, flu: 0, c: 6, i: 10, x: 2 } },
+  { id: "corugender", name: "Corugender", description: "A gender that changes with the seasons.", traits: { m: 4, f: 4, n: 4, flu: 9, c: 9, i: 6, x: 5 } },
+  { id: "cryptogender", name: "Cryptogender", description: "A gender that is hidden or mysterious.", traits: { m: 1, f: 1, n: 5, flu: 4, c: 10, i: 3, x: 9 } },
+  { id: "cyclogender", name: "Cyclogender", description: "A gender that follows a cycle.", traits: { m: 4, f: 4, n: 4, flu: 10, c: 8, i: 7, x: 4 } },
+  { id: "deliciagender", name: "Deliciagender", description: "A gender that feels like a pleasant sensation.", traits: { m: 1, f: 1, n: 5, flu: 3, c: 9, i: 8, x: 8 } },
+  { id: "digitgender", name: "Digitgender", description: "A gender related to technology or digital spaces.", traits: { m: 1, f: 1, n: 4, flu: 5, c: 9, i: 7, x: 10 } },
+  { id: "duogender", name: "Duogender", description: "Identifying with two distinct genders.", traits: { m: 6, f: 6, n: 2, flu: 0, c: 7, i: 9, x: 1 } },
+  { id: "duragender", name: "Duragender", description: "A gender that is long-lasting and stable.", traits: { m: 5, f: 5, n: 5, flu: 0, c: 5, i: 10, x: 1 } },
+  { id: "eaqueer", name: "Eaqueer", description: "A gender identity that is inherently queer.", traits: { m: 3, f: 3, n: 3, flu: 6, c: 9, i: 9, x: 8 } },
+  { id: "egogender", name: "Egogender", description: "A gender that is simply 'me'.", traits: { m: 2, f: 2, n: 2, flu: 2, c: 10, i: 10, x: 5 } },
+  { id: "entrogender", name: "Entrogender", description: "A gender that feels like it's fading or becoming chaotic.", traits: { m: 1, f: 1, n: 6, flu: 8, c: 10, i: 4, x: 7 } },
+  { id: "equigender", name: "Equigender", description: "Identifying with multiple genders in equal measure.", traits: { m: 5, f: 5, n: 5, flu: 0, c: 8, i: 8, x: 2 } },
+  { id: "existigender", name: "Existigender", description: "A gender that only exists when conscious of it.", traits: { m: 2, f: 2, n: 7, flu: 6, c: 10, i: 5, x: 6 } },
+  { id: "exgender", name: "Exgender", description: "Refusing to identify with the concept of gender entirely.", traits: { m: 0, f: 0, n: 10, flu: 0, c: 9, i: 0, x: 9 } },
+  { id: "faegender", name: "Faegender", description: "A gender connected to faeries or mystical beings.", traits: { m: 0, f: 2, n: 4, flu: 6, c: 9, i: 8, x: 10 } },
+  { id: "fascigender", name: "Fascigender", description: "A gender that is fascinating or captivating.", traits: { m: 3, f: 3, n: 3, flu: 4, c: 9, i: 9, x: 8 } },
+  { id: "fictivegender", name: "Fictivegender", description: "A gender related to a fictional character or world.", traits: { m: 2, f: 2, n: 4, flu: 5, c: 10, i: 7, x: 10 } },
+  { id: "flowgender", name: "Flowgender", description: "A gender that feels like it's flowing.", traits: { m: 3, f: 3, n: 5, flu: 10, c: 8, i: 6, x: 6 } },
+  { id: "fluidflux", name: "Fluidflux", description: "A combination of genderfluid and genderflux.", traits: { m: 5, f: 5, n: 5, flu: 10, c: 9, i: 10, x: 4 } },
+  { id: "genderflux", name: "Genderflux", description: "A gender identity where the intensity of the gender varies.", traits: { m: 5, f: 5, n: 5, flu: 4, c: 8, i: 10, x: 3 } },
+  { id: "gendervoid", name: "Gendervoid", description: "A gender identity that is fundamentally empty or a void.", traits: { m: 0, f: 0, n: 10, flu: 0, c: 9, i: 0, x: 10 } },
+  { id: "glassgender", name: "Glassgender", description: "A gender that feels fragile and transparent like glass.", traits: { m: 1, f: 1, n: 8, flu: 3, c: 9, i: 3, x: 8 } },
+  { id: "heliogender", name: "Heliogender", description: "A gender that is warm and bright like the sun.", traits: { m: 5, f: 5, n: 3, flu: 2, c: 9, i: 10, x: 9 } },
+  { id: "hydrogender", name: "Hydrogender", description: "A gender that feels like water.", traits: { m: 2, f: 2, n: 5, flu: 10, c: 8, i: 6, x: 8 } },
+  { id: "impigender", name: "Impigender", description: "A gender that is mischievous.", traits: { m: 3, f: 3, n: 3, flu: 6, c: 9, i: 8, x: 9 } },
+  { id: "invisigender", name: "Invisigender", description: "A gender that is invisible or undetectable.", traits: { m: 0, f: 0, n: 10, flu: 2, c: 10, i: 1, x: 10 } },
+  { id: "juxera", name: "Juxera", description: "A feminine identity that is near the binary but separate.", traits: { m: 0, f: 8, n: 3, flu: 0, c: 7, i: 9, x: 5 } },
+  { id: "kingender", name: "Kingender", description: "A gender related to one's kintype (otherkin).", traits: { m: 2, f: 2, n: 4, flu: 5, c: 10, i: 9, x: 10 } },
+  { id: "leogender", name: "Leogender", description: "A gender that is strong and regal.", traits: { m: 8, f: 2, n: 3, flu: 0, c: 9, i: 10, x: 8 } },
+  { id: "librafeminine", name: "Librafeminine", description: "Mostly agender but with a connection to femininity.", traits: { m: 0, f: 3, n: 10, flu: 0, c: 6, i: 4, x: 2 } },
+  { id: "libramasculine", name: "Libramasculine", description: "Mostly agender but with a connection to masculinity.", traits: { m: 3, f: 0, n: 10, flu: 0, c: 6, i: 4, x: 2 } },
+  { id: "magigender", name: "Magigender", description: "Mostly one gender but not entirely.", traits: { m: 5, f: 5, n: 3, flu: 0, c: 7, i: 8, x: 1 } },
+  { id: "mirrorgender", name: "Mirrorgender", description: "A gender that reflects those around you.", traits: { m: 4, f: 4, n: 4, flu: 10, c: 10, i: 6, x: 6 } },
+  { id: "multiflux", name: "Multiflux", description: "Identifying with multiple genders whose intensities vary.", traits: { m: 7, f: 7, n: 5, flu: 8, c: 9, i: 10, x: 5 } },
+  { id: "nanogender", name: "Nanogender", description: "Feeling a very small amount of a certain gender.", traits: { m: 1, f: 1, n: 9, flu: 0, c: 8, i: 2, x: 4 } },
+  { id: "nightgender", name: "Nightgender", description: "A gender that is tied to the night.", traits: { m: 0, f: 0, n: 5, flu: 3, c: 10, i: 7, x: 10 } },
+  { id: "nullgender", name: "Nullgender", description: "Having no gender, like agender but more emphasizing the 'null' nature.", traits: { m: 0, f: 0, n: 10, flu: 0, c: 9, i: 1, x: 5 } },
+  { id: "paragender", name: "Paragender", description: "Feeling like you are 'near' or 'beside' a gender.", traits: { m: 4, f: 4, n: 4, flu: 0, c: 7, i: 8, x: 2 } },
+  { id: "perigender", name: "Perigender", description: "A gender identity that is around a certain gender but not it.", traits: { m: 3, f: 3, n: 3, flu: 0, c: 8, i: 7, x: 4 } },
+  { id: "polyflux", name: "Polyflux", description: "Fluidity between multiple genders with varying intensity.", traits: { m: 7, f: 7, n: 5, flu: 10, c: 9, i: 10, x: 5 } }
+];
